@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jMorrison</title>
+	<style type="text/css">
+		.left{
+			margin-left: 2em;
+			width:8em;
+			float:left;
+		}
+		.center{
+			margin-left: 11em;
+			max-width: 40em;
+			text-align: justify;
+			text-justify: inter-word;
+			margin-right: 1em;
+		}
+		.right{
+			position: absolute;
+			margin-left: 52em;	
+		}
+		.title{
+			font-size: 1.1em;
+			font-weight: bold;
+
+
+		}
+		.row{margin-bottom: 1em;}
+		.spacer{
+			padding-top: 3em;
+		}
+		.resume{
+			max-width: 51em;
+		}
+		body{
+
+			font-size: 0.8em;
+			font-family: sans-serif;
+		}
+		</style>
+</head>
+<body>
+
+	<div id="toc"></div>
+	<div class="resume" id="top">
+
+
+
+	<div><div class="left">Name</div>		
+		<h1 class="center title">John Morrison</h1></div>
+
+		<div><div class="left">Email</div>		
+		<div class="center"><a href="mailto:jmorrison@gsd.harvard.edu">jmorrison@gsd.harvard.edu</a></div></div>
+
+		<div><div class="left">Address</div>	
+		<div class="center">222 N. Columbus, Chicago, IL 60601</div></div>
+
+		<div><div class="left">Phone</div>		
+		<div class="center">817.501.8395</div></div>
+		<div class="spacer"></div>
+
+
+
+	<div><h1 class="center title">Experience</h1></div>
+
+		<div class="row"><div class="left">
+			2015 - Current</div>
+
+			<div class="center">Corgan, Architect<br>
+			3D modeling of complex geometry using C# scripting.</div></div>
+
+
+		<div class="row"><div class="left">
+			2014 - 2015</div> 
+
+			<div class="center">Zaha Hadid Architects, Architectural Assistant<br>
+			3D modeling of complex geometry using C# scripting. International projects supervised by Patrik Schumacher</div></div>
+
+		<div class="row"><div class="left">
+			2013 - 2014 </div>	
+
+			<div class="center">Harvard University, Teaching Assistant<br>
+			Software developer for Geometry Lab. Supervised by RIBA Architect George L. Legendre</div></div>
+
+
+		<div class="row"><div class="left">
+			2003 - 2009</div>
+			
+			<div class="center">Designer, Freelance<br>
+			6 years experience in design for the entertainment industry. Art Director working in film, television, theatre, and theme parks. Companies include Dallas Theater Center, Fort Worth Opera, Casa Manana Theatre, KReed + Company, 18:20 Productions, Hit Entertainment, Cyclone Films<br></div></div>
+
+
+		</div>
+
+		<div class="spacer"></div>
+
+
+
+
+
+		
+
+
+	<div><h1 class="center title">Education</h1></div>
+
+		<div><div class="left">2012 - 2014</div>	
+			<div class="center">Harvard University, Graduate School of Design<br>
+			Master in Architecture II</div></div>
+
+		<div><div class="left">2009 - 2012</div>	
+			<div class="center">University of Texas in Arlington, School of Architecture<br>
+			Master in Architecture</div></div>
+
+		<div><div class="left">2001 - 2005</div>	
+			<div class="center">Texas Wesleyan University<br>
+			Bachelor of Arts</div></div>
+		<div class="spacer"></div>
+
+
+
+
+
+
+	<div id="images"></div>
+
+		<div class="spacer"></div>
+
+
+
+
+	<div><h1 class="center title">Software</h1></div>
+
+		<div class="row"><div class="left">3D Modeling:</div> 
+			<div class="center">Rhino, Revit, AutoCAD, Digital Project<br></div></div>
+		<div class="row"><div class="left">Scripting:</div> 
+			<div class="center">C#, Dynamo, Python, JavaScript, <br>
+			Grasshopper, Visual Studio, Android Studio, GitHub<br></div></div>
+		<div class="spacer"></div>
+		<a href="#top"><p class="center">Return to Top</p></a>
+
+
+
+		
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="jquery.unveil.js"></script>
+	<script async>
+		var imageWidth = 1191;
+		var imageHeight = 842;
+		var tocIndex = [2,10,46,93];
+
+		if (window.innerWidth<imageWidth) {
+			imageWidth = window.innerWidth-10;
+			imageHeight = imageWidth*0.70696893366918555835432409739715;}
+
+
+		for (var i = 2; i <= 122; i++) {
+			myFunction(i);
+			};
+
+
+
+
+		if (window.innerWidth>800) {
+			document.getElementById("toc").setAttribute("class","right");
+				for (var i = 1; i <= 4; i++) {
+			myTOC(i);
+		};
+		};
+
+		function myTOC(number) {
+			var div  =  document.getElementById("toc");
+			var a = document.createElement("a");
+			a.setAttribute("href","#"+tocIndex[number-1]);
+			var img = document.createElement("IMG"); 
+			img.setAttribute("src", "72dpi/_1_"+number+".png");
+			div.appendChild(a);
+			a.appendChild(img);
+			var br = document.createElement("br");
+			div.appendChild(br);
+			// img.setAttribute("width", imageWidth);
+			// img.setAttribute("height", imageHeight);
+		    //document.body.appendChild(img);
+			}
+
+
+		function myFunction(number) {
+			var div = document.getElementById("images");
+			var img = document.createElement("IMG");
+			img.setAttribute("id", number);
+			img.setAttribute("src", "bg.png");
+			img.setAttribute("data-src", "72dpi/_"+number+".jpg");
+			// img.setAttribute("data-src-retina", "300dpi/_"+number+".jpg");
+			img.setAttribute("width", imageWidth);
+			img.setAttribute("height", imageHeight);
+		    div.appendChild(img);
+			}		
+		function offsetAnchor() {
+		    if(location.hash.length !== 0) {
+		    	var offset=0;
+		    	 if(window.innerHeight<imageHeight){ 
+		    	 	offset= (imageHeight)-window.innerHeight;}
+		        window.scrollTo(0, window.scrollY +offset);
+		    }
+			}
+		$(window).on("hashchange", function () {
+		    offsetAnchor();
+			});
+		window.setTimeout(function() {
+			if (window.scrollY>imageHeight*0.25) {
+		    offsetAnchor();}
+			}, 1); // The delay of 1 is arbitrary
+		$(document).ready(function() {
+		  $("img").unveil(1200);
+			});
+
+		</script>
+</body>
+</html>
